@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Theme } from './types/project';
 import { useProjectStore } from './lib/projectStore';
-import { videoExporter } from './lib/videoExporter';
 import { ThemeSelector } from './components/ThemeSelector';
 import { AspectRatioSelector } from './components/AspectRatioSelector';
 import { MusicUploader } from './components/MusicUploader';
@@ -48,6 +47,7 @@ function App() {
     setExportProgress(0);
 
     try {
+      const { videoExporter } = await import('./lib/videoExporter');
       const videoBlob = await videoExporter.exportVideo(project, (progress) => {
         setExportProgress(Math.round(progress * 100));
       });

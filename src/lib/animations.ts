@@ -1,4 +1,4 @@
-import { AnimationType, TransitionEffect } from '../types/project';
+import { AnimationType } from '../types/project';
 
 export interface AnimationConfig {
   type: AnimationType;
@@ -93,7 +93,8 @@ export class AnimationEngine {
     ctx.translate(x, y);
     ctx.scale(scale, scale);
     ctx.rotate(rotation);
-    ctx.skewY(skewY);
+    // skew via transform matrix: [a,b,c,d,e,f] — skewY = tan(angle) in c slot
+    ctx.transform(1, skewY, 0, 1, 0, 0);
     ctx.translate(-x, -y);
 
     ctx.globalAlpha = Math.min(progress * 1.5, 1);
