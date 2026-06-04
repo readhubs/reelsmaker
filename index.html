@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/reelsmaker/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1" />
     <title>Video Reel Maker - Instagram & TikTok Creator</title>
     <meta name="description" content="Create professional video reels with AI-free client-side rendering. Instagram, TikTok, and Facebook reels maker. No backend, no API keys needed." />
@@ -10,10 +10,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
     <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Video Reel Maker" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/reelsmaker/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
@@ -23,7 +24,7 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed:', err));
+        navigator.serviceWorker.register('/reelsmaker/sw.js').catch(err => console.log('SW registration failed:', err));
       }
     </script>
   </body>

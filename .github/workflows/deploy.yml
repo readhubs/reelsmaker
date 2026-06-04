@@ -25,13 +25,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
 
       - name: Add .nojekyll
         run: touch dist/.nojekyll
+
+      - name: Add COOP/COEP headers for FFmpeg WASM
+        run: |
+          cat > dist/_headers << 'HEADERS'
+          /*
+            Cross-Origin-Opener-Policy: same-origin
+            Cross-Origin-Embedder-Policy: require-corp
+          HEADERS
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

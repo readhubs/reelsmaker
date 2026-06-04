@@ -5,6 +5,12 @@ export default defineConfig({
   plugins: [react()],
   base: '/reelsmaker/',
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    exclude: ['lucide-react', '@ffmpeg/ffmpeg', '@ffmpeg/util'],
+  },
+  server: {
+    headers: {
+      'Cross-Origin-Opener-Policy': 'same-origin',
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+    },
   },
 });
