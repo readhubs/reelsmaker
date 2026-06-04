@@ -64,7 +64,6 @@ project/
 └── dist/ (generated after build)
 ```
 
-
 ## Local Testing
 
 1. **Install dependencies**:
